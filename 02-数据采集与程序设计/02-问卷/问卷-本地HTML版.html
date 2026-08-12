@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人AI幕僚使用情况问卷</title>
+<style>
+  body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; max-width: 860px; margin: 0 auto; padding: 24px; line-height: 1.7; color: #222; }
+  h1 { font-size: 20px; border-bottom: 2px solid #333; padding-bottom: 8px; }
+  h2 { font-size: 16px; margin-top: 28px; background: #f2f2f2; padding: 6px 10px; }
+  .q { margin: 14px 0 4px; font-weight: 600; }
+  .opt { margin: 2px 0 2px 18px; font-weight: 400; }
+  .likert { margin: 6px 0 6px 18px; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+  .likert label { font-weight: 400; white-space: nowrap; }
+  .note { color: #666; font-size: 13px; }
+  button { margin: 20px 8px 20px 0; padding: 10px 22px; font-size: 15px; cursor: pointer; }
+  #msg { color: #c00; font-weight: 600; }
+  input[type=text] { padding: 4px 8px; width: 120px; }
+</style>
+</head>
+<body>
+<h1>个人AI幕僚使用情况问卷</h1>
+<p class="note">本问卷匿名填写，约需8分钟。所有题目必答。如有疑问可随时退出。测谎题用于质量控制，请按题面如实作答。</p>
+
+<h2>链接码（选填，用于与使用日志匿名关联）</h2>
+<div class="q">请填写你自拟的4位随机数字（如 7321），问卷与日志将用同一链接码关联，研究者无法据此识别你的身份。</div>
+<div class="opt"><input type="text" id="link_id" placeholder="4位数字"></div>
+
+<h2>第一部分 使用现状</h2>
+<div class="q">A1. 你目前是否还在使用工作坊搭建的个人AI幕僚？</div>
+<div class="opt"><label><input type="radio" name="A1" value="1">每天都在用</label></div>
+<div class="opt"><label><input type="radio" name="A1" value="2">每周几次</label></div>
+<div class="opt"><label><input type="radio" name="A1" value="3">偶尔用</label></div>
+<div class="opt"><label><input type="radio" name="A1" value="4">已停止使用</label></div>
+
+<div class="q">A2. 平均每次使用时长？</div>
+<div class="opt"><label><input type="radio" name="A2" value="1">少于10分钟</label></div>
+<div class="opt"><label><input type="radio" name="A2" value="2">10—30分钟</label></div>
+<div class="opt"><label><input type="radio" name="A2" value="3">30分钟—1小时</label></div>
+<div class="opt"><label><input type="radio" name="A2" value="4">1小时以上</label></div>
+
+<div class="q">A3. 主要使用场景？（多选）</div>
+<div class="opt"><label><input type="checkbox" data-id="A3_1">学业任务</label></div>
+<div class="opt"><label><input type="checkbox" data-id="A3_2">个人事务</label></div>
+<div class="opt"><label><input type="checkbox" data-id="A3_3">情绪梳理</label></div>
+<div class="opt"><label><input type="checkbox" data-id="A3_4">信息调研</label></div>
+<div class="opt"><label><input type="checkbox" data-id="A3_5">写作</label></div>
+<div class="opt"><label><input type="checkbox" data-id="A3_6">其他</label></div>
+
+<h2>第二部分 感知有用性</h2>
+<div class="q">B1. 使用个人AI幕僚能提高我完成任务的效率。</div>
+<div class="likert" data-item="B1"></div>
+<div class="q">B2. 使用个人AI幕僚能提升我工作产出的质量。</div>
+<div class="likert" data-item="B2"></div>
+<div class="q">B3. 个人AI幕僚对我完成学业和日常事务是有用的。</div>
+<div class="likert" data-item="B3"></div>
+<div class="q">B4. 总体而言，使用个人AI幕僚让我更高效地安排和处理事情。</div>
+<div class="likert" data-item="B4"></div>
+
+<h2>第三部分 感知易用性</h2>
+<div class="q">C1. 我认为部署个人AI幕僚的过程是简单的。</div>
+<div class="likert" data-item="C1"></div>
+<div class="q">C2. 我认为日常使用个人AI幕僚不需要太多学习成本。</div>
+<div class="likert" data-item="C2"></div>
+<div class="q">C3. 我能轻松地让个人AI幕僚理解我的需求。</div>
+<div class="likert" data-item="C3"></div>
+<div class="q">C4. 总体而言，使用个人AI幕僚对我来说不费力气。</div>
+<div class="likert" data-item="C4"></div>
+
+<h2>第四部分 感知信任</h2>
+<div class="q">D1. 我信任个人AI幕僚给出的分析和建议。</div>
+<div class="likert" data-item="D1"></div>
+<div class="q">D2. 在把任务交给它之前，我相信它能够胜任。</div>
+<div class="likert" data-item="D2"></div>
+<div class="q">D3. 我认为它的判断总体上是可靠的。</div>
+<div class="likert" data-item="D3"></div>
+<div class="q">D4. 即使出现错误，我也相信它能被发现和纠正。</div>
+<div class="likert" data-item="D4"></div>
+
+<h2>第五部分 感知风险</h2>
+<div class="q">E1. 把个人事务交给AI处理，让我担心隐私泄露。</div>
+<div class="likert" data-item="E1"></div>
+<div class="q">E2. 我担心AI的产出包含错误信息。</div>
+<div class="likert" data-item="E2"></div>
+<div class="q">E3. 如果AI犯错了，造成的后果可能让我难以承受。</div>
+<div class="likert" data-item="E3"></div>
+
+<h2>第六部分 持续使用意向</h2>
+<div class="q">F1. 我打算在未来继续使用个人AI幕僚。</div>
+<div class="likert" data-item="F1"></div>
+<div class="q">F2. 如果条件允许，我愿意增加使用频率。</div>
+<div class="likert" data-item="F2"></div>
+<div class="q">F3. 我会把个人AI幕僚推荐给身边的朋友。</div>
+<div class="likert" data-item="F3"></div>
+
+<h2>第七部分 委托任务类型（多选）</h2>
+<div class="q">G1. 你在哪些环节会把任务交给个人AI幕僚？</div>
+<div class="opt"><label><input type="checkbox" data-id="G1_1">需求界定（明确我想要什么）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="G1_2">信息检索（搜索、查资料）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="G1_3">信息整理（归纳、结构化、做笔记）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="G1_4">分析推理（数据分析、逻辑推演）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="G1_5">内容生成（写作、文案、方案草稿）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="G1_6">执行操作（发邮件、改文件、跑程序等）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="G1_7">判断决策（做选择、下结论）</label></div>
+
+<h2>第八部分 收回原因（多选）</h2>
+<div class="q">H1. 哪些任务你试过交给AI，后来又收回来自己做？</div>
+<div class="opt"><label><input type="checkbox" data-id="H1_1">能力不足（它做不了或做不好）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="H1_2">输出不可靠（质量不稳定，需要大量返工）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="H1_3">不省时间（解释需求加检查结果比自己干还慢）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="H1_4">隐私顾虑（涉及个人或机构敏感信息）</label></div>
+<div class="opt"><label><input type="checkbox" data-id="H1_5">情感需求（这件事我想自己完成）</label></div>
+
+<h2>第九部分 记忆感知</h2>
+<div class="q">I1. 我的个人AI幕僚记得我，每次对话不用从头解释。</div>
+<div class="likert" data-item="I1"></div>
+<div class="q">I2. 它了解我的偏好和处境，给出的回应比通用AI更贴合我。</div>
+<div class="likert" data-item="I2"></div>
+<div class="q">I3. 如果换一个全新的AI工具，我会损失积累下来的记忆和默契。</div>
+<div class="likert" data-item="I3"></div>
+
+<h2>第十部分 质量控制</h2>
+<div class="q">J1. 我觉得把任务交给AI经常让事情变得更麻烦。</div>
+<div class="likert" data-item="J1"></div>
+<div class="q">J2.（测谎）本题请选择"比较不同意"。</div>
+<div class="likert" data-item="J2"></div>
+
+<div>
+<button onclick="submitQ()">提交并导出CSV</button>
+<button onclick="resetQ()">清空重填</button>
+</div>
+<div id="msg"></div>
+
+<script>
+// 生成七个李克特选项
+const LABELS = ["非常不同意","不同意","比较不同意","中立","比较同意","同意","非常同意"];
+document.querySelectorAll(".likert").forEach(function(el){
+  var item = el.getAttribute("data-item");
+  for (var v = 1; v <= 7; v++) {
+    var label = document.createElement("label");
+    var radio = document.createElement("input");
+    radio.type = "radio"; radio.name = item; radio.value = v;
+    label.appendChild(radio);
+    label.appendChild(document.createTextNode(" " + v + " " + LABELS[v-1]));
+    el.appendChild(label);
+  }
+});
+
+// 必答校验：所有单选组都必须选择
+function checkRequired(){
+  var groups = ["A1","A2","B1","B2","B3","B4","C1","C2","C3","C4","D1","D2","D3","D4","E1","E2","E3","F1","F2","F3","I1","I2","I3","J1","J2"];
+  var missing = [];
+  groups.forEach(function(g){
+    if (!document.querySelector('input[name="'+g+'"]:checked')) missing.push(g);
+  });
+  return missing;
+}
+
+function submitQ(){
+  var missing = checkRequired();
+  if (missing.length > 0) {
+    document.getElementById("msg").textContent = "还有未作答的题目：" + missing.join("、") + "，请完成后再提交。";
+    return;
+  }
+  var headers = ["link_id","id","A1","A2","A3_1","A3_2","A3_3","A3_4","A3_5","A3_6",
+    "B1","B2","B3","B4","C1","C2","C3","C4","D1","D2","D3","D4","E1","E2","E3",
+    "F1","F2","F3","G1_1","G1_2","G1_3","G1_4","G1_5","G1_6","G1_7",
+    "H1_1","H1_2","H1_3","H1_4","H1_5","I1","I2","I3","J1","J2"];
+  var vals = [];
+  vals.push(document.getElementById("link_id").value || "");
+  vals.push(""); // id 留空，整理时按顺序编号
+  ["A1","A2"].forEach(function(g){ vals.push(document.querySelector('input[name="'+g+'"]:checked').value); });
+  ["A3_1","A3_2","A3_3","A3_4","A3_5","A3_6"].forEach(function(c){
+    vals.push(document.querySelector('input[data-id="'+c+'"]').checked ? "1" : "0");
+  });
+  ["B1","B2","B3","B4","C1","C2","C3","C4","D1","D2","D3","D4","E1","E2","E3","F1","F2","F3"].forEach(function(g){
+    vals.push(document.querySelector('input[name="'+g+'"]:checked').value);
+  });
+  ["G1_1","G1_2","G1_3","G1_4","G1_5","G1_6","G1_7"].forEach(function(c){
+    vals.push(document.querySelector('input[data-id="'+c+'"]').checked ? "1" : "0");
+  });
+  ["H1_1","H1_2","H1_3","H1_4","H1_5"].forEach(function(c){
+    vals.push(document.querySelector('input[data-id="'+c+'"]').checked ? "1" : "0");
+  });
+  ["I1","I2","I3","J1","J2"].forEach(function(g){
+    vals.push(document.querySelector('input[name="'+g+'"]:checked').value);
+  });
+  var csv = headers.join(",") + "\n" + vals.map(function(v){ return '"' + String(v).replace(/"/g,'""') + '"'; }).join(",") + "\n";
+  var blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8;" });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "问卷-数据-"+Date.now()+".csv";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  document.getElementById("msg").textContent = "已导出，请将文件保存到 02-问卷 文件夹，并与其它问卷合并到 问卷-数据模板.csv。";
+}
+
+function resetQ(){
+  document.querySelectorAll("input").forEach(function(el){ el.checked = false; el.value = el.type === "text" ? "" : el.value; });
+  document.getElementById("link_id").value = "";
+  document.getElementById("msg").textContent = "";
+}
+</script>
+</body>
+</html>
