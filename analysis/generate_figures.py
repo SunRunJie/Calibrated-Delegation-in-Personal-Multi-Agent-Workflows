@@ -34,32 +34,34 @@ plt.rcParams["mathtext.fontset"] = "stix"
 plt.rcParams["axes.unicode_minus"] = False
 plt.rcParams["figure.facecolor"] = "white"
 plt.rcParams["savefig.facecolor"] = "white"
-plt.rcParams["axes.edgecolor"] = "#111111"
+plt.rcParams["axes.edgecolor"] = "#3D6680"
 plt.rcParams["axes.linewidth"] = 0.9
-plt.rcParams["axes.labelcolor"] = "#111111"
-plt.rcParams["xtick.color"] = "#111111"
-plt.rcParams["ytick.color"] = "#111111"
+plt.rcParams["axes.labelcolor"] = "#3D6680"
+plt.rcParams["xtick.color"] = "#3D6680"
+plt.rcParams["ytick.color"] = "#3D6680"
 plt.rcParams["xtick.direction"] = "in"
 plt.rcParams["ytick.direction"] = "in"
 
 # ------------------------------------------------------------------
 # Legacy figure logic retained from the original project.
 # ------------------------------------------------------------------
-INK = "#111111"      # Legacy figure logic retained from the original project.
-GRAY = "#555555"     # Legacy figure logic retained from the original project.
-LGRAY = "#888888"    # Legacy figure logic retained from the original project.
-GRIDC = "#C9C9C9"    # Legacy figure logic retained from the original project.
-BLUE = "#4C72B0"     # Legacy figure logic retained from the original project.
-ORANGE = "#DD8452"   # Legacy figure logic retained from the original project.
-GREEN = "#55A868"    # Legacy figure logic retained from the original project.
-RED = "#C44E52"      # Legacy figure logic retained from the original project.
-PURPLE = "#8172B2"   # Legacy figure logic retained from the original project.
-CYAN = "#64B5CD"     # Legacy figure logic retained from the original project.
-BROWN = "#937860"    # Legacy figure logic retained from the original project.
-GOLD = "#CCB974"     # Legacy figure logic retained from the original project.
-LIGHTB = "#DCE6F2"   # Legacy figure logic retained from the original project.
-LIGHTG = "#E8E8E8"   # Legacy figure logic retained from the original project.
-LIGHTO = "#FBE9DC"   # Legacy figure logic retained from the original project.
+# Official scientific-figure-assistant palette. Group 1 is used first;
+# Group 2 supplies additional categorical colors only when needed.
+INK = "#3D6680"
+GRAY = "#6769A1"
+LGRAY = "#B6B6B6"
+GRIDC = "#B6B6B6"
+BLUE = "#8DC5E8"
+ORANGE = "#D2868B"
+GREEN = "#349237"
+RED = "#D72828"
+PURPLE = "#6769A1"
+CYAN = "#3183BA"
+BROWN = "#A39571"
+GOLD = "#D85B75"
+LIGHTB = "#8DC5E8"
+LIGHTG = "#B6B6B6"
+LIGHTO = "#D2868B"
 
 OUT_C = {"\u6210\u529f": GREEN, "\u90e8\u5206\u6210\u529f": GOLD, "\u64a4\u56de": PURPLE, "\u5931\u8d25": RED}
 STAGES = ["\u9700\u6c42\u754c\u5b9a", "\u4fe1\u606f\u68c0\u7d22", "\u4fe1\u606f\u6574\u7406", "\u5206\u6790\u63a8\u7406", "\u5185\u5bb9\u751f\u6210", "\u6267\u884c\u64cd\u4f5c", "\u5224\u65ad\u51b3\u7b56"]
@@ -76,6 +78,9 @@ SCALE_COLS = {"\u611f\u77e5\u6709\u7528\u6027": ["B1", "B2", "B3", "B4"],
               "\u8bb0\u5fc6\u611f\u77e5": ["I1", "I2", "I3"]}
 STAGE_LEVEL_C = {"\u9700\u6c42\u754c\u5b9a": RED, "\u4fe1\u606f\u68c0\u7d22": BLUE, "\u4fe1\u606f\u6574\u7406": BLUE, "\u5206\u6790\u63a8\u7406": PURPLE,
                  "\u5185\u5bb9\u751f\u6210": BLUE, "\u6267\u884c\u64cd\u4f5c": PURPLE, "\u5224\u65ad\u51b3\u7b56": RED}
+
+PALETTE_GROUP_1 = [BLUE, INK, RED, GREEN, ORANGE]
+PALETTE_GROUP_2 = [PURPLE, LGRAY, BROWN, CYAN, GOLD]
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "restricted")
@@ -218,7 +223,7 @@ TRANSLATIONS = {
     "\u6ce8：\u4efb\u52a1 A/B \u65f6\u95f4\u4e0e\u4ecb\u5165\u7c7b\u6307\u6807 r≈0.91、p>0.05（\u5c0f\u6837\u672c n=4），\u7ed3\u8bba\u4e3a\u65b9\u5411\u6027\u652f\u6301。\u6570\u636e\u6765\u6e90：04-\u5bf9\u6bd4\u5b9e\u9a8c\u5206\u6790.csv。": "Note: Legacy standardized-r display retained from the original figure. Exact paired results are reported in the analysis output; n=4 per task.",
     "DDA \u4e09\u9636\u6bb5\u6a21\u578b：\u90e8\u7f72 → \u59d4\u6258 → \u6c89\u6dc0": "DDA model: Deploy - Delegate - Accumulate", "\u628a“\u7cfb\u7edf\u7ea7\u6280\u672f\u91c7\u7eb3”\u63a8\u8fdb\u4e3a“\u4efb\u52a1\u7ea7\u59d4\u6258\u51b3\u7b56”": "From system-level adoption to task-level delegation decisions",
     "\u90e8\u7f72\nDeploy": "DEPLOY", "\u59d4\u6258\nDelegate": "DELEGATE", "\u6c89\u6dc0\nAccumulate": "ACCUMULATE",
-    "\u4fe1\u4efb\u6269\u5927\u59d4\u6258\u8fb9\u754c、\n\u6301\u7eed\u4f7f\u7528": "Experience updates delegation\nand continued use", "\u964d\u4f4e\u8f6c\u6362\u6210\u672c": "Reduce repeated explanation",
+    "\u4fe1\u4efb\u6269\u5927\u59d4\u6258\u8fb9\u754c、\n\u6301\u7eed\u4f7f\u7528": "", "\u964d\u4f4e\u8f6c\u6362\u6210\u672c": "Reduce repeated explanation",
     "\u6ce8：\u4f9d\u636e\u7814\u7a76\u62a5\u544a 2.6 \u7ed8\u5236；\u56db\u4e2a\u547d\u9898\u5206\u522b\u5bf9\u5e94\u5047\u8bbe H1—H4。": "Note: The DDA model organizes testable propositions; current evidence is an initial probe, not definitive validation.",
     "“\u7edf\u7b79—\u6267\u884c—\u6838\u67e5”\u4e09\u667a\u80fd\u4f53\u534f\u4f5c\u67b6\u6784": "Orchestrator-worker-checker multi-agent architecture", "orchestrator-workers × evaluator-optimizer：\u663e\u5f0f\u9a8c\u6536\u56de\u8def＋\u4e2a\u4eba\u8bb0\u5fc6\u5c42": "Explicit verification loop with a personal memory layer",
     "\u7528\u6237": "User", "\u7edf\u7b79\u8005\nOrchestrator": "Orchestrator", "\u6267\u884c\u8005\nWorker": "Worker", "\u6838\u67e5\u8005\nChecker": "Checker", "\u8bb0\u5fc6\u7cfb\u7edf Memory": "Memory system",
@@ -312,6 +317,14 @@ def load():
     })
     for column, mapping in reverse_maps.items():
         log[column] = log[column].replace(mapping)
+    # Public English inputs may already contain stage labels without the line
+    # breaks used in figure display text. Normalize them back to the internal
+    # canonical keys before aggregation.
+    english_stage_map = {
+        TRANSLATIONS[stage].replace("\n", " "): stage for stage in STAGES
+    }
+    for column in ("stage", "coderB_stage"):
+        log[column] = log[column].replace(english_stage_map)
     log["event_date"] = pd.to_datetime(log["event_date"], errors="coerce")
     exp = pd.read_csv(E_CSV, encoding="utf-8-sig")
     rcols = [c for c in exp.columns if c.startswith("r") and "_" in c]
@@ -330,14 +343,14 @@ def style(ax, grid="y", xticks=True):
     """\u5b66\u672f\u5750\u6807\u8f74：\u767d\u5e95、\u9ed1\u8272\u7ec6\u6846、\u5411\u5185\u523b\u5ea6、\u6d45\u7070\u7f51\u683c"""
     ax.set_facecolor("white")
     for s in ax.spines.values():
-        s.set_color("#111111")
+        s.set_color(INK)
         s.set_linewidth(0.9)
-    ax.tick_params(colors="#111111", labelsize=11, length=4, width=0.9)
+    ax.tick_params(colors=INK, labelsize=11, length=4, width=0.9)
     if grid == "y":
-        ax.grid(axis="y", color="#DDDDDD", lw=0.7, ls=(0, (1, 3)))
+        ax.grid(axis="y", color=GRIDC, lw=0.7, alpha=0.55, ls=(0, (2, 3)))
         ax.set_axisbelow(True)
     elif grid == "both":
-        ax.grid(axis="both", color="#DDDDDD", lw=0.7, ls=(0, (1, 3)))
+        ax.grid(axis="both", color=GRIDC, lw=0.7, alpha=0.55, ls=(0, (2, 3)))
         ax.set_axisbelow(True)
     if not xticks:
         ax.set_xticks([])
@@ -345,7 +358,7 @@ def style(ax, grid="y", xticks=True):
 
 def set_title(ax, text, fs=14.5, pad=12, weight="bold"):
     """\u5de6\u5bf9\u9f50\u56fe\u9898（\u7c7b\u4f3c Word \u56fe\u9898\u6392\u7248）"""
-    ax.set_title(text, fontsize=fs, color="#111111", pad=pad, loc="left", fontweight=weight)
+    ax.set_title(text, fontsize=fs, color=INK, pad=pad, loc="left", fontweight=weight)
 
 
 def note(fig, text, x=0.015, y=0.012, fs=9):
@@ -514,14 +527,19 @@ def fig_03_sbdp_flow():
     steps = ["\u4e24\u8f6e\u4fe1\u606f\u6536\u96c6", "\u521b\u5efa\u5165\u53e3\u6587\u4ef6", "\u521b\u5efa\u8bb0\u5fc6\u76ee\u5f55", "\u5199\u5165\u8bb0\u5fc6\u6863\u6848", "\u5b8c\u6210\u5ba3\u544a", "\u6301\u7eed\u4f7f\u7528"]
     subs = ["\u914d\u7f6e\u53c2\u6570＋Bootstrap\u91c7\u8bbf", "VS Code＋Copilot \u73af\u5883", "\u8bb0\u5fc6\u76ee\u5f55\u7ed3\u6784",
             "profile/priorities \u7b49\u521d\u59cb\u5316", "\u96f6\u4ee3\u7801·\u53ef\u5ba1\u8ba1", "\u65f6\u95f4\u8f74\u65e5\u5fd7\u79ef\u7d2f"]
+    # Pre-wrap the English labels so each stage remains inside its box after translation.
+    steps = ["Two-round\ninformation collection", "Create\nentry file", "Create memory\ndirectory",
+             "Write memory\nprofiles", "Confirm\ncompletion", "Continued\nuse"]
+    subs = ["Configuration +\nbootstrap interview", "VS Code + Copilot\nenvironment", "Memory directory\nstructure",
+            "Initialize profile\nand priorities", "No-code and\nauditable", "Timeline log\naccumulation"]
     fills = [LIGHTB, LIGHTB, LIGHTB, LIGHTB, LIGHTB, LIGHTB]
     xs = np.linspace(9, 91, 6)
     y0 = 56
     for i, (s, sub, x) in enumerate(zip(steps, subs, xs)):
-        box(ax, (x, y0), 13, 22, s, fc=fills[i], fs=12.5, weight="bold", sub=sub, sub_fs=9.5)
+        box(ax, (x, y0), 14, 24, s, fc=fills[i], fs=11.2, weight="bold", sub=sub, sub_fs=8.8)
         ax.text(x, y0 + 17.5, f"Stage {i + 1}", ha="center", fontsize=10.5, color=GRAY)
         if i < 5:
-            arr(ax, (x + 6.8, y0), (xs[i + 1] - 6.8, y0), lw=1.6, ms=14)
+            arr(ax, (x + 7.1, y0), (xs[i + 1] - 7.1, y0), lw=1.6, ms=14)
     # Legacy figure logic retained from the original project.
     box(ax, (24, 18), 26, 15, "\u7b2c\u4e00\u8f6e：\u90e8\u7f72\u53c2\u6570", fc="white", fs=11.5, sub="\u6267\u884c\u6743\u9650·\u5de5\u5177\u94fe·\u8eab\u4efd", sub_fs=9.5)
     box(ax, (50, 18), 26, 15, "\u7b2c\u4e8c\u8f6e：Bootstrap \u91c7\u8bbf", fc="white", fs=11.5, sub="\u504f\u597d·\u76ee\u6807·\u5173\u952e\u4eba\u7269", sub_fs=9.5)
@@ -693,7 +711,10 @@ def fig_09_stage_outcome_heat(log):
     pct = ct.div(ct.sum(axis=1), axis=0) * 100
     fig = new_fig(10.5, 6.2)
     ax = fig.add_axes([0.15, 0.16, 0.66, 0.72])
-    im = ax.imshow(pct.values, cmap="RdBu_r", aspect="auto", vmin=0, vmax=100, zorder=1)
+    heat_cmap = matplotlib.colors.LinearSegmentedColormap.from_list(
+        "official_group_1_heat", ["#8DC5E8", "#FFFFFF", "#D72828"]
+    )
+    im = ax.imshow(pct.values, cmap=heat_cmap, aspect="auto", vmin=0, vmax=100, zorder=1)
     ax.set_xticks(range(4)); ax.set_xticklabels(OUTCOMES, fontsize=12)
     ax.set_yticks(range(7)); ax.set_yticklabels(STAGES, fontsize=12)
     for i in range(7):
@@ -744,9 +765,9 @@ def fig_11_error_exposure(log):
     for j, oc in enumerate(OUTCOMES[1:]):
         vals = ct[oc].values
         barh(ax, y, vals, OUT_C[oc], height=0.55, left=left)
-        for yi, v in zip(y, vals):
+        for row_index, (yi, v) in enumerate(zip(y, vals)):
             if v > 0:
-                ax.text(left[yi] + v / 2, yi, f"{v}", ha="center", va="center",
+                ax.text(left[row_index] + v / 2, yi, f"{v}", ha="center", va="center",
                         fontsize=11, color=INK, fontweight="bold")
         left += vals
     ax.set_yticks(y); ax.set_yticklabels(order, fontsize=12)
@@ -862,8 +883,8 @@ def fig_15_memory(q, mem):
             label=f"Linear fit (r = {lr.rvalue:.3f})")
     ax.scatter(x, y, s=55, color=BLUE, edgecolors=INK, linewidths=0.8, zorder=4,
                label="\u6837\u672c（N=13）")
-    for xi, yi, lk in zip(x, y, m["link_id"]):
-        ax.text(xi + 4, yi + 0.1, f"#{lk}", fontsize=9, color=GRAY)
+    # Pseudonymous point labels are omitted because they add no analytical value
+    # and collide in the dense center of this small linked sample.
     ax.set_xlabel("\u65f6\u95f4\u8f74\u65e5\u5fd7\u884c\u6570（\u8bb0\u5fc6\u79ef\u7d2f\u91cf）", fontsize=12)
     ax.set_ylabel("\u6301\u7eed\u4f7f\u7528\u610f\u5411（F1—F3 \u5747\u503c）", fontsize=12)
     ax.set_ylim(1, 7.4)
@@ -878,8 +899,8 @@ def fig_16_alpha():
     """24 \u95ee\u5377\u91cf\u8868\u4fe1\u5ea6（Cronbach's α）"""
     items = ["\u611f\u77e5\u6709\u7528\u6027", "\u611f\u77e5\u6613\u7528\u6027", "\u611f\u77e5\u4fe1\u4efb", "\u611f\u77e5\u98ce\u9669", "\u6301\u7eed\u4f7f\u7528\u610f\u5411", "\u8bb0\u5fc6\u611f\u77e5"]
     alphas = [0.871, 0.778, 0.815, 0.403, 0.879, 0.814]
-    fig = new_fig(10, 5.6)
-    ax = fig.add_axes([0.10, 0.16, 0.80, 0.72])
+    fig = new_fig(11.5, 6.2)
+    ax = fig.add_axes([0.10, 0.22, 0.84, 0.66])
     style(ax)
     x = np.arange(len(items))
     cols = [GREEN if a >= 0.70 else RED for a in alphas]
@@ -888,9 +909,11 @@ def fig_16_alpha():
         ax.text(xi, a + 0.03, f"{a:.3f}", ha="center", fontsize=12, color=INK)
     ax.axhline(0.70, color=INK, lw=1.2, ls="--")
     ax.text(5.4, 0.715, "0.70（\u5e38\u7528\u9608\u503c）", fontsize=10, color=INK, ha="right")
-    ax.text(3, 0.403 + 0.14, "\u611f\u77e5\u98ce\u9669 α=0.403（\u91cf\u8868\u5185\u6db5\u8f83\u5bbd）", ha="center",
-            fontsize=10.5, color=RED)
-    ax.set_xticks(x); ax.set_xticklabels(items, fontsize=11.5)
+    ax.annotate("Perceived risk: alpha=.403\nnot interpreted as a composite", xy=(3, 0.403), xytext=(2.48, 0.58),
+                ha="left", fontsize=10.5, color=RED, linespacing=1.25,
+                bbox=dict(boxstyle="round,pad=0.22", facecolor="#FFFFFF", edgecolor="none", alpha=0.92),
+                arrowprops=dict(arrowstyle="->", color=RED, lw=1.0))
+    ax.set_xticks(x); ax.set_xticklabels(items, fontsize=10.5, rotation=18, ha="right")
     ax.set_ylim(0, 1.05)
     ax.set_ylabel("Cronbach's α", fontsize=12)
     set_title(ax, "\u95ee\u5377\u516d\u91cf\u8868\u4fe1\u5ea6（N=29）", fs=15)
@@ -918,7 +941,7 @@ def fig_17_radar(q):
     ax.set_yticklabels(["1", "2", "3", "4", "5", "6", "7"], fontsize=9, color=GRAY)
     ax.grid(color=GRIDC, linewidth=0.8)
     for sp in ax.spines.values():
-        sp.set_color("#111111"); sp.set_linewidth(0.9)
+        sp.set_color(INK); sp.set_linewidth(0.9)
     ax.plot(ang, v, lw=2.0, color=BLUE, zorder=3)
     ax.fill(ang, v, color=to_rgba_light(BLUE, 0.25), zorder=2)
     ax.scatter(ang[:-1], vals, s=40, color=BLUE, edgecolors=INK, linewidths=0.8, zorder=4)
@@ -1146,7 +1169,7 @@ def fig_25_gain(exp):
 def fig_26_slope(exp):
     """31 \u914d\u5bf9\u4e2a\u4f53\u8f68\u8ff9：\u603b\u65f6\u957f\u5355→\u591a"""
     tasks = ["A", "B", "C"]
-    fig = new_fig(12, 4.8)
+    fig = new_fig(12, 5.4)
     for k, t in enumerate(tasks):
         ax = fig.add_subplot(1, 3, k + 1)
         style(ax, grid=False)
@@ -1154,18 +1177,29 @@ def fig_26_slope(exp):
         s = sub[sub["condition"] == "single"].set_index("participant")["total_time_min"]
         m = sub[sub["condition"] == "multi"].set_index("participant")["total_time_min"]
         parts = [p for p in s.index if p in m.index]
-        for p in parts:
+        def spread(values, minimum_gap=1.25):
+            order = sorted(range(len(values)), key=lambda index: values[index])
+            placed = list(map(float, values))
+            for previous, current in zip(order, order[1:]):
+                placed[current] = max(placed[current], placed[previous] + minimum_gap)
+            return placed
+
+        single_values = [float(s[p]) for p in parts]
+        multi_values = [float(m[p]) for p in parts]
+        single_labels = spread(single_values)
+        multi_labels = spread(multi_values)
+        for participant_index, p in enumerate(parts):
             sv, mv = s[p], m[p]
             c = GREEN if mv < sv else RED
             ax.plot([0, 1], [sv, mv], color=c, lw=1.6, zorder=3)
             ax.scatter([0, 1], [sv, mv], s=42, color=c, edgecolors=INK, linewidths=0.7, zorder=4)
-            ax.text(0 - 0.03, sv, f"{sv:.0f}", ha="right", va="center", fontsize=10.5)
-            ax.text(1 + 0.03, mv, f"{mv:.0f}", ha="left", va="center", fontsize=10.5)
+            ax.text(-0.04, single_labels[participant_index], f"{sv:.0f}", ha="right", va="center", fontsize=10)
+            ax.text(1.04, multi_labels[participant_index], f"{mv:.0f}", ha="left", va="center", fontsize=10)
         ax.set_xticks([0, 1]); ax.set_xticklabels(["\u5355\u667a\u80fd\u4f53", "\u591a\u667a\u80fd\u4f53"], fontsize=11.5)
         ax.set_xlim(-0.5, 1.5)
         ax.set_ylim(0, 40)
         ax.set_title(f"Task {t}", fontsize=13, fontweight="bold")
-    fig.suptitle("\u914d\u5bf9\u4e2a\u4f53\u8f68\u8ff9：\u6bcf\u4f4d\u88ab\u8bd5\u7684\u603b\u65f6\u957f（\u5355 → \u591a\u667a\u80fd\u4f53）", fontsize=15, y=0.98, fontweight="bold")
+    fig.suptitle("\u914d\u5bf9\u4e2a\u4f53\u8f68\u8ff9：\u6bcf\u4f4d\u88ab\u8bd5\u7684\u603b\u65f6\u957f（\u5355 → \u591a\u667a\u80fd\u4f53）", fontsize=15, y=0.965, fontweight="bold")
     note(fig, "\u6ce8：\u7eff\u7ebf=\u591a\u667a\u80fd\u4f53\u66f4\u5feb，\u7ea2\u7ebf=\u591a\u667a\u80fd\u4f53\u66f4\u6162；\u6bcf\u4f4d\u88ab\u8bd5\u4e00\u6761\u8fde\u7ebf。\u6570\u636e\u6765\u6e90：\u5b9e\u9a8c\u6570\u636e\u8bb0\u5f55\u8868（n=4）。")
     save(fig, "31-\u914d\u5bf9\u4e2a\u4f53\u8f68\u8ff9.png")
 
@@ -1174,7 +1208,7 @@ def fig_27_effect(exp):
     """32 \u6548\u5e94\u91cf\u4e0e\u663e\u8457\u6027（\u6c14\u6ce1\u56fe）"""
     rows = _exp_stats(exp)
     fig = new_fig(10.5, 6.0)
-    ax = fig.add_axes([0.11, 0.16, 0.60, 0.72])
+    ax = fig.add_axes([0.10, 0.16, 0.62, 0.70])
     style(ax)
     colors = {"\u603b\u65f6\u957f(min)": BLUE, "\u4ecb\u5165\u6b21\u6570": PURPLE, "\u4ecb\u5165\u65f6\u957f(min)": ORANGE, "\u4ea7\u51fa\u8d28\u91cf": GREEN}
     markers = {"A": "o", "B": "s", "C": "^"}
@@ -1184,17 +1218,17 @@ def fig_27_effect(exp):
         ax.scatter(r["p"], r["r"], s=60 + r["r"] * 420, color=colors[r["metric"]],
                    marker=markers[r["task"]], alpha=0.85, edgecolors=INK, linewidths=0.8, zorder=3)
     ax.axvspan(0, 0.05, color=LIGHTB, zorder=0)
-    ax.text(0.025, 1.20, "p < 0.05", ha="center", fontsize=10.5, color=GRAY)
+    ax.text(0.025, 1.255, "p < .05", ha="center", va="top", fontsize=10, color=INK)
     ax.axhline(0.5, color=LGRAY, lw=0.8, ls=":")
     ax.text(0.98, 0.52, "r = 0.50", fontsize=10, color=GRAY, ha="right")
     ax.set_xlim(0, 1.02); ax.set_ylim(0, 1.30)
     ax.set_xlabel("p \u503c", fontsize=12)
     ax.set_ylabel("\u6548\u5e94\u91cf r（Wilcoxon \u8fd1\u4f3c）", fontsize=12)
-    h1 = [plt.Line2D([0], [0], marker=m, color="w", markerfacecolor="#9AA5B1",
+    h1 = [plt.Line2D([0], [0], marker=m, color="w", markerfacecolor=LGRAY,
                      markersize=8, label=f"Task {t}") for t, m in markers.items()]
     h2 = [plt.Line2D([0], [0], marker="o", color="w", markerfacecolor=c,
                      markersize=8, label=l) for l, c in colors.items()]
-    ax.legend(handles=h1 + h2, loc="center left", bbox_to_anchor=(1.03, 0.5),
+    ax.legend(handles=h1 + h2, loc="center left", bbox_to_anchor=(1.04, 0.50),
               fontsize=10, frameon=True, edgecolor=INK, title="\u6807\u8bb0：\u4efb\u52a1 ｜ \u989c\u8272：\u6307\u6807",
               title_fontsize=9.5)
     set_title(ax, "\u5bf9\u6bd4\u5b9e\u9a8c\u5404\u6307\u6807\u7684\u6548\u5e94\u91cf\u4e0e\u663e\u8457\u6027", fs=15)
@@ -1229,23 +1263,25 @@ def fig_28_dda():
                                  shrinkA=1, shrinkB=1, zorder=2))
     ax.text(65, 83.5, "\u4fe1\u4efb\u6269\u5927\u59d4\u6258\u8fb9\u754c、\n\u6301\u7eed\u4f7f\u7528", fontsize=20, color=INK,
             ha="center", va="center", linespacing=1.6)
+    ax.text(65, 87.0, "Experience updates delegation\nand continued use", fontsize=15.5, color=INK,
+            ha="center", va="center", linespacing=1.25, zorder=4)
     # Legacy figure logic retained from the original project.
     ax.add_patch(FancyArrowPatch((22, 42), (78, 42), arrowstyle="-|>", mutation_scale=18,
                                  linewidth=2.6, color=GRAY, linestyle=(0, (4, 2)),
                                  shrinkA=1, shrinkB=1, zorder=2))
     ax.text(50, 36.5, "\u964d\u4f4e\u8f6c\u6362\u6210\u672c", ha="center", va="center", fontsize=20, color=GRAY)
-    props = [("P1 \u90e8\u7f72\u89e6\u53d1\u59d4\u6258", "\u90e8\u7f72\u6210\u672c\u662f\u59d4\u6258\n\u884c\u4e3a\u7684\u9996\u8981\u95e8\u69db", BLUE),
-             ("P2 \u59d4\u6258\u8fb9\u754c\u7684\u5f62\u6210", "\u80fd\u529b\u611f\u77e5×\u4fe1\u4efb×\u4ea4\u4e92\u6210\u672c\n\u4e09\u5143\u5224\u65ad；\u5931\u8d25\u7ecf\u7b97\u6cd5\u538c\u6076\n\u538b\u4f4e\u59d4\u6258\u7387", PURPLE),
-             ("P3 \u6c89\u6dc0\u7d2f\u79ef\u4fe1\u4efb", "\u8bb0\u5fc6\u5f62\u6210\u8def\u5f84\u4f9d\u8d56，\u6295\u5165\n\u8d8a\u6df1\u8d8a\u96be\u79bb\u5f00、\u8d8a\u613f\u6258\u4ed8", GREEN),
-             ("P4 \u67b6\u6784\u7684\u8fb9\u754c", "\u53ef\u5206\u89e3\u591a\u73af\u8282\u4efb\u52a1\u591a\u667a\u80fd\u4f53\n\u5360\u4f18；\u5355\u73af\u8282\u5f3a\u4e3b\u89c2\n\u4efb\u52a1\u65e0\u4f18\u52bf", ORANGE)]
+    props = [("P1\nDeployment enables delegation", "Deployment burden is an initial\nbarrier to delegation", BLUE),
+             ("P2\nDelegation boundary formation", "Perceived capability, trust, and interaction cost\nshape allocation; failures may\nreduce later delegation", PURPLE),
+             ("P3\nAccumulation and continuance", "Memory may improve fit and create\nrelationship-specific investment", GREEN),
+             ("P4\nArchitectural boundary", "Multi-agent coordination may help on\ndecomposable tasks, but not necessarily\non judgment-heavy tasks", ORANGE)]
     for i, (t, d, c) in enumerate(props):
         x = 13 + i * 25
-        box(ax, (x, 14), 24, 26, t, fc="white", ec=c, fs=26, weight="bold", sub=d, sub_fs=18)
+        box(ax, (x, 14), 22, 26, t, fc="white", ec=c, fs=14.5, weight="bold", sub=d, sub_fs=11.5)
     note(fig, "\u6ce8：\u4f9d\u636e\u7814\u7a76\u62a5\u544a 2.6 \u7ed8\u5236；\u56db\u4e2a\u547d\u9898\u5206\u522b\u5bf9\u5e94\u5047\u8bbe H1—H4。", x=0.03, fs=14)
     save(fig, "04-DDA\u4e09\u9636\u6bb5\u6a21\u578b.png")
 
 
-def fig_29_architecture():
+def fig_29_architecture_legacy():
     """02 \u7edf\u7b79—\u6267\u884c—\u6838\u67e5\u4e09\u667a\u80fd\u4f53\u67b6\u6784"""
     fig = new_fig(12.5, 7.8)
     ax = fig.add_axes([0.02, 0.03, 0.96, 0.92]); ax.set_axis_off()
@@ -1286,6 +1322,61 @@ def fig_29_architecture():
                                  linewidth=1.6, color=INK, shrinkA=0, shrinkB=1, zorder=3))
     ax.text(3.5, 40, "⑤ \u8bb0\u5fc6\u6c89\u6dc0", fontsize=11, color=INK, rotation=90, ha="center", va="center")
     note(fig, "\u6ce8：\u4f9d\u636e\u7814\u7a76\u62a5\u544a 1.1 \u4e0e 2.1 \u7ed8\u5236；①—⑤\u4e3a\u4e00\u6b21\u59d4\u6258\u7684\u534f\u4f5c\u987a\u5e8f。", x=0.03)
+    save(fig, "02-\u7edf\u7b79\u6267\u884c\u6838\u67e5\u67b6\u6784.png")
+
+
+def fig_29_architecture():
+    """02 Orchestrator-worker-checker architecture."""
+    fig = new_fig(12.5, 7.8)
+    ax = fig.add_axes([0.03, 0.04, 0.94, 0.90])
+    ax.set_axis_off()
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 100)
+
+    ax.text(50, 97, "Orchestrator-worker-checker multi-agent architecture",
+            ha="center", fontsize=17, fontweight="bold")
+    ax.text(50, 92.5, "Explicit verification loop with an auditable personal-memory layer",
+            ha="center", fontsize=11, color=GRAY)
+
+    box(ax, (50, 83), 23, 11, "User", fc="white", fs=14, weight="bold",
+        sub="Requirements, checking, and final review", sub_fs=9.2)
+    box(ax, (50, 63), 30, 15, "Orchestrator", fc=LIGHTB, fs=15, weight="bold",
+        sub="Task decomposition, integration, and acceptance", sub_fs=9.4)
+    box(ax, (28, 37), 24, 14, "Worker", fc="white", fs=14, weight="bold",
+        sub="Bounded role and tool use", sub_fs=9.4)
+    box(ax, (72, 37), 24, 14, "Checker", fc=LIGHTG, fs=14, weight="bold",
+        sub="Output comparison and verification", sub_fs=9.4)
+    box(ax, (50, 13), 44, 11, "Personal memory", fc="white", fs=13.5, weight="bold",
+        sub="Hot memory / cold memory / auditable timeline", sub_fs=9.4)
+
+    arr(ax, (47, 77.4), (47, 70.7), lw=1.8, ms=14)
+    ax.text(44.8, 74.1, "Delegation request", ha="right", va="center", fontsize=10.5, color=INK)
+    arr(ax, (53, 70.7), (53, 77.4), lw=1.8, ms=14)
+    ax.text(55.2, 74.1, "Delivered output", ha="left", va="center", fontsize=10.5, color=INK)
+
+    arr(ax, (42, 55.5), (32.5, 44.2), lw=1.9, ms=15)
+    ax.text(31.5, 51.4, "1  Task decomposition", ha="center", fontsize=10.5, color=INK)
+    arr(ax, (58, 55.5), (67.5, 44.2), lw=1.9, ms=15)
+    ax.text(68.5, 51.4, "2  Assign subtasks", ha="center", fontsize=10.5, color=INK)
+
+    arr(ax, (40.2, 37), (59.8, 37), lw=1.9, ms=15)
+    ax.text(50, 40.6, "3  Submit output", ha="center", fontsize=10.5, color=INK)
+
+    ax.add_patch(FancyArrowPatch((81.5, 44), (65, 63), arrowstyle="-|>", mutation_scale=15,
+                                 linewidth=1.8, color=INK, connectionstyle="arc3,rad=-0.28",
+                                 shrinkA=1, shrinkB=1, zorder=3))
+    ax.text(84.5, 55.5, "4  Verification feedback", ha="center", va="center",
+            fontsize=10.5, color=INK, rotation=58)
+
+    ax.plot([35, 17, 17, 28], [62, 62, 13, 13], color=PURPLE, lw=1.6,
+            linestyle=(0, (4, 2)), zorder=2)
+    ax.add_patch(FancyArrowPatch((17, 13), (28, 13), arrowstyle="-|>", mutation_scale=14,
+                                 linewidth=1.6, color=PURPLE, linestyle=(0, (4, 2)),
+                                 shrinkA=0, shrinkB=1, zorder=3))
+    ax.text(13.7, 38, "5  Memory update", ha="center", va="center", fontsize=10.5,
+            color=PURPLE, rotation=90)
+
+    note(fig, "Note: Steps 1-5 show the collaboration sequence for one delegated task; memory remains readable and auditable.", x=0.03)
     save(fig, "02-\u7edf\u7b79\u6267\u884c\u6838\u67e5\u67b6\u6784.png")
 
 

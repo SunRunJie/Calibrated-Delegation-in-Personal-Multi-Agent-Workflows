@@ -17,7 +17,7 @@ This repository contains an empirical information-systems study of how non-techn
 ## Repository structure
 
 ```text
-docs/          Research questions, theory, and study design
+docs/          Complete English research report, theory, and study design
 protocols/     Ethics materials, instruments, codebooks, and study protocols
 data/          Data-access documentation and Git-ignored restricted inputs
 analysis/      Statistical analysis plan and figure-generation code
@@ -27,6 +27,8 @@ artifact/      English Self-Bootstrapping Deployment Protocol
 ```
 
 Word and PowerPoint deliverables are intentionally excluded. The repository contains PNG figures only; no PDF figure copies are generated.
+
+The complete English manuscript, with all 33 figures preserved in source order, is available at [`docs/research-report.md`](docs/research-report.md).
 
 ## Reproduce the figures
 
