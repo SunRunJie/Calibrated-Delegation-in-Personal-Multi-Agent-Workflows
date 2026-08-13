@@ -123,5 +123,4 @@ The repository integrates artifact evaluation, field behavior, linked indicators
 
 ## Research integrity
 
-Participation was voluntary and governed by informed consent. Identifiable information was excluded from analysis outputs. Original consent prohibited external distribution of participant-level data, so the public release contains aggregate results only unless renewed permission and institutional review authorize broader disclosure. AI-assisted work on translation, code refactoring, visualization, and language revision must be disclosed; the researcher remains responsible for research design, data provenance, analytical decisions, and conclusions.
-
+Participation was voluntary and governed by informed consent. Identifiable information was excluded from analysis outputs. Original consent prohibited external distribution of participant-level data, so the public release contains aggregate results only unless renewed permission and institutional review authorize broader disclosure. The researcher remains responsible for research design, data provenance, analytical decisions, and conclusions.

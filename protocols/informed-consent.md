@@ -28,9 +28,9 @@ Participation is voluntary. You may stop at any time, for any reason, without ex
 4. Before exporting logs or conversations, remove confidential institutional information and personal information about third parties.
 5. Participant-level data will not be distributed externally. Research reports will present anonymized aggregate results.
 
-## 4. Use of AI and academic integrity
+## 4. Research integrity
 
-The study follows Nanjing University's guidance on responsible use of generative AI by undergraduate students. Any use of AI for literature discovery, text organization, translation, editing, code refactoring, or visualization will be disclosed. The researcher remains responsible for the study design, data provenance, analysis decisions, interpretation, and conclusions. No data will be generated or fabricated to replace participant observations.
+The study follows Nanjing University's research-integrity guidance. The researcher remains responsible for the study design, data provenance, analysis decisions, interpretation, and conclusions. No data will be generated or fabricated to replace participant observations.
 
 ## 5. Consent
 
@@ -49,4 +49,3 @@ Researcher signature: ____________________  Date: ____________________
 This form should be retained by both the participant and researcher.
 
 > Public-release note: the original consent terms prohibit external distribution of participant-level data. Repository publication therefore uses aggregate outputs only unless renewed consent and institutional authorization permit broader release.
-

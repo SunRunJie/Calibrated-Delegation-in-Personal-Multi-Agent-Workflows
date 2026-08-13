@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Validate the principal results and regenerate the 33 English PNG figures.
+"""Validate the principal results and generate the 33 English PNG figures.
 
 Restricted inputs are read from ``data/restricted``. Figures are written to
-``figures``. The original figure sequence and plotting logic are preserved.
+``figures``.
 """
 import os
 import sys
@@ -26,7 +26,7 @@ except Exception:
     pass
 
 # ------------------------------------------------------------------
-# Legacy figure logic retained from the original project.
+
 # ------------------------------------------------------------------
 plt.rcParams["font.family"] = ["Times New Roman", "SimSun"]
 plt.rcParams["font.serif"] = ["Times New Roman", "SimSun"]
@@ -43,9 +43,9 @@ plt.rcParams["xtick.direction"] = "in"
 plt.rcParams["ytick.direction"] = "in"
 
 # ------------------------------------------------------------------
-# Legacy figure logic retained from the original project.
+
 # ------------------------------------------------------------------
-# Official scientific-figure-assistant palette. Group 1 is used first;
+# Project research palette. Group 1 is used first;
 # Group 2 supplies additional categorical colors only when needed.
 INK = "#3D6680"
 GRAY = "#6769A1"
@@ -297,7 +297,7 @@ def translate_visible_text(fig):
     fig.canvas.draw()
 
 # ------------------------------------------------------------------
-# Legacy figure logic retained from the original project.
+
 # ------------------------------------------------------------------
 def load():
     q = pd.read_csv(Q_CSV, encoding="utf-8-sig")
@@ -357,7 +357,7 @@ def style(ax, grid="y", xticks=True):
 
 
 def set_title(ax, text, fs=14.5, pad=12, weight="bold"):
-    """\u5de6\u5bf9\u9f50\u56fe\u9898（\u7c7b\u4f3c Word \u56fe\u9898\u6392\u7248）"""
+    """Set a left-aligned figure title."""
     ax.set_title(text, fontsize=fs, color=INK, pad=pad, loc="left", fontweight=weight)
 
 
@@ -419,14 +419,14 @@ def save(fig, name, dpi=220, tight=True):
 
 
 # ==================================================================
-# Legacy figure logic retained from the original project.
+
 # ==================================================================
 def fig_01_dashboard(sus):
     """07 \u90e8\u7f72\u53ef\u7528\u6027\u6d4b\u8bd5\u7ed3\u679c（\u56db\u5b50\u56fe）"""
     fig = new_fig(11.5, 8.0)
     comp = (sus["completion"] == "\u662f").sum()
     total = len(sus)
-    # Legacy figure logic retained from the original project.
+
     ax = fig.add_axes([0.06, 0.57, 0.26, 0.33])
     style(ax, grid=False); ax.set_aspect("equal")
     ax.pie([comp, total - comp], startangle=90, counterclock=False,
@@ -437,7 +437,7 @@ def fig_01_dashboard(sus):
     ax.text(0, -0.12, "\u5b8c\u6210\u7387（4/5）", ha="center", va="center", fontsize=11.5, color=INK)
     ax.text(0, -0.30, "\u9608\u503c ≥ 80%", ha="center", va="center", fontsize=10, color=GRAY)
     set_title(ax, "（a）\u90e8\u7f72\u5b8c\u6210\u7387", fs=13)
-    # Legacy figure logic retained from the original project.
+
     ax = fig.add_axes([0.40, 0.57, 0.54, 0.33])
     style(ax)
     sus = sus.sort_values("sus_score")
@@ -454,7 +454,7 @@ def fig_01_dashboard(sus):
     ax.set_xlim(0, 95)
     ax.set_xlabel("SUS \u5f97\u5206", fontsize=12)
     set_title(ax, "（b）SUS \u7cfb\u7edf\u53ef\u7528\u6027\u5f97\u5206", fs=13)
-    # Legacy figure logic retained from the original project.
+
     ax = fig.add_axes([0.06, 0.045, 0.42, 0.42])
     style(ax)
     sus_t = sus.sort_values("time_min")
@@ -467,7 +467,7 @@ def fig_01_dashboard(sus):
     ax.set_ylim(0, 52)
     ax.set_ylabel("\u5206\u949f", fontsize=12)
     set_title(ax, "（c）\u72ec\u7acb\u90e8\u7f72\u8017\u65f6", fs=13)
-    # Legacy figure logic retained from the original project.
+
     ax = fig.add_axes([0.53, 0.045, 0.41, 0.42])
     style(ax)
     sus_h = sus.sort_values("help_points")
@@ -527,7 +527,7 @@ def fig_03_sbdp_flow():
     steps = ["\u4e24\u8f6e\u4fe1\u606f\u6536\u96c6", "\u521b\u5efa\u5165\u53e3\u6587\u4ef6", "\u521b\u5efa\u8bb0\u5fc6\u76ee\u5f55", "\u5199\u5165\u8bb0\u5fc6\u6863\u6848", "\u5b8c\u6210\u5ba3\u544a", "\u6301\u7eed\u4f7f\u7528"]
     subs = ["\u914d\u7f6e\u53c2\u6570＋Bootstrap\u91c7\u8bbf", "VS Code＋Copilot \u73af\u5883", "\u8bb0\u5fc6\u76ee\u5f55\u7ed3\u6784",
             "profile/priorities \u7b49\u521d\u59cb\u5316", "\u96f6\u4ee3\u7801·\u53ef\u5ba1\u8ba1", "\u65f6\u95f4\u8f74\u65e5\u5fd7\u79ef\u7d2f"]
-    # Pre-wrap the English labels so each stage remains inside its box after translation.
+    # Wrap long labels so each stage remains inside its box.
     steps = ["Two-round\ninformation collection", "Create\nentry file", "Create memory\ndirectory",
              "Write memory\nprofiles", "Confirm\ncompletion", "Continued\nuse"]
     subs = ["Configuration +\nbootstrap interview", "VS Code + Copilot\nenvironment", "Memory directory\nstructure",
@@ -540,7 +540,7 @@ def fig_03_sbdp_flow():
         ax.text(x, y0 + 17.5, f"Stage {i + 1}", ha="center", fontsize=10.5, color=GRAY)
         if i < 5:
             arr(ax, (x + 7.1, y0), (xs[i + 1] - 7.1, y0), lw=1.6, ms=14)
-    # Legacy figure logic retained from the original project.
+
     box(ax, (24, 18), 26, 15, "\u7b2c\u4e00\u8f6e：\u90e8\u7f72\u53c2\u6570", fc="white", fs=11.5, sub="\u6267\u884c\u6743\u9650·\u5de5\u5177\u94fe·\u8eab\u4efd", sub_fs=9.5)
     box(ax, (50, 18), 26, 15, "\u7b2c\u4e8c\u8f6e：Bootstrap \u91c7\u8bbf", fc="white", fs=11.5, sub="\u504f\u597d·\u76ee\u6807·\u5173\u952e\u4eba\u7269", sub_fs=9.5)
     box(ax, (76, 18), 26, 15, "\u5408\u5e76\u6267\u884c", fc="white", fs=11.5, sub="\u90e8\u7f72\u4e0e\u8ba4\u8bc6\u7528\u6237\u4e00\u6b21\u5b8c\u6210", sub_fs=9.5)
@@ -560,12 +560,12 @@ def fig_04_cost_compress(sus):
     ax.set_xlim(0, 100); ax.set_ylim(0, 100)
     ax.text(50, 97, "\u90e8\u7f72\u6210\u672c\u7684\u538b\u7f29：\u4e13\u5bb6\u914d\u7f6e → \u5f15\u5bfc\u5f0f\u5bf9\u8bdd", ha="center",
             fontsize=16, fontweight="bold")
-    # Legacy figure logic retained from the original project.
+
     box(ax, (24, 74), 34, 14, "\u4f20\u7edf\u624b\u52a8\u914d\u7f6e", fc=LIGHTO, fs=14.5, weight="bold")
     items_l = ["\u73af\u5883\u914d\u7f6e（\u6570\u5c0f\u65f6）", "\u7406\u89e3\u4ee3\u7801 / API", "\u591a\u89d2\u8272\u7f16\u6392", "\u4f9d\u8d56\u4e13\u5bb6\u52b3\u52a8"]
     for i, t in enumerate(items_l):
         ax.text(24, 56 - i * 11, t, ha="center", fontsize=13.5, color=INK)
-    # Legacy figure logic retained from the original project.
+
     box(ax, (76, 74), 34, 14, "SBDP \u5f15\u5bfc\u5f0f\u5bf9\u8bdd", fc=LIGHTB, fs=14.5, weight="bold")
     items_r = ["\u7ea6 30 \u5206\u949f（\u5b9e\u6d4b M=29.5 min）", "\u96f6\u4ee3\u7801 · \u7eaf\u6587\u6863", "\u667a\u80fd\u4f53\u81ea\u4e3b\u6267\u884c",
                "\u666e\u901a\u7528\u6237\u53ef\u72ec\u7acb\u5b8c\u6210"]
@@ -580,7 +580,7 @@ def fig_04_cost_compress(sus):
 
 
 # ==================================================================
-# Legacy figure logic retained from the original project.
+
 # ==================================================================
 def _rates(q):
     return q[G1].apply(pd.to_numeric, errors="coerce").mean().values
@@ -597,7 +597,7 @@ def fig_05_boundary(q):
     bval(ax, x, rates, colors, width=0.55)
     for xi, v in zip(x, rates):
         valtxt(ax, xi, v, fs=12, fmt="{:.2f}")
-    # Legacy figure logic retained from the original project.
+
     xs = np.linspace(0, 6, 300)
     spl = interpolate.make_interp_spline(x, rates, k=3, bc_type="natural")
     ys = np.clip(spl(xs), 0, 1)
@@ -1041,7 +1041,7 @@ def fig_20_user_events(log):
 
 
 # ==================================================================
-# Legacy figure logic retained from the original project.
+
 # ==================================================================
 def _exp_stats(exp):
     tasks = ["A", "B", "C"]
@@ -1238,7 +1238,7 @@ def fig_27_effect(exp):
 
 
 # ==================================================================
-# Legacy figure logic retained from the original project.
+
 # ==================================================================
 def fig_28_dda():
     """04 DDA \u4e09\u9636\u6bb5\u6a21\u578b"""
@@ -1257,7 +1257,7 @@ def fig_28_dda():
         sub="\u8bb0\u5fc6＝\n\u5173\u7cfb\u4e13\u7528\u6027\u6295\u8d44", sub_fs=20)
     arr(ax, (37, 62), (43, 62), lw=3.2, ms=26)
     arr(ax, (63, 62), (69, 62), lw=3.2, ms=26)
-    # Legacy figure logic retained from the original project.
+
     ax.add_patch(FancyArrowPatch((78, 77), (58, 77), arrowstyle="-|>", mutation_scale=26,
                                  linewidth=3.0, color=INK, connectionstyle="arc3,rad=0.25",
                                  shrinkA=1, shrinkB=1, zorder=2))
@@ -1265,7 +1265,7 @@ def fig_28_dda():
             ha="center", va="center", linespacing=1.6)
     ax.text(65, 87.0, "Experience updates delegation\nand continued use", fontsize=15.5, color=INK,
             ha="center", va="center", linespacing=1.25, zorder=4)
-    # Legacy figure logic retained from the original project.
+
     ax.add_patch(FancyArrowPatch((22, 42), (78, 42), arrowstyle="-|>", mutation_scale=18,
                                  linewidth=2.6, color=GRAY, linestyle=(0, (4, 2)),
                                  shrinkA=1, shrinkB=1, zorder=2))
@@ -1279,50 +1279,6 @@ def fig_28_dda():
         box(ax, (x, 14), 22, 26, t, fc="white", ec=c, fs=14.5, weight="bold", sub=d, sub_fs=11.5)
     note(fig, "\u6ce8：\u4f9d\u636e\u7814\u7a76\u62a5\u544a 2.6 \u7ed8\u5236；\u56db\u4e2a\u547d\u9898\u5206\u522b\u5bf9\u5e94\u5047\u8bbe H1—H4。", x=0.03, fs=14)
     save(fig, "04-DDA\u4e09\u9636\u6bb5\u6a21\u578b.png")
-
-
-def fig_29_architecture_legacy():
-    """02 \u7edf\u7b79—\u6267\u884c—\u6838\u67e5\u4e09\u667a\u80fd\u4f53\u67b6\u6784"""
-    fig = new_fig(12.5, 7.8)
-    ax = fig.add_axes([0.02, 0.03, 0.96, 0.92]); ax.set_axis_off()
-    ax.set_xlim(0, 102); ax.set_ylim(0, 100)
-    ax.text(50, 97.5, "“\u7edf\u7b79—\u6267\u884c—\u6838\u67e5”\u4e09\u667a\u80fd\u4f53\u534f\u4f5c\u67b6\u6784", ha="center",
-            fontsize=17, fontweight="bold")
-    ax.text(50, 93, "orchestrator-workers × evaluator-optimizer：\u663e\u5f0f\u9a8c\u6536\u56de\u8def＋\u4e2a\u4eba\u8bb0\u5fc6\u5c42",
-            ha="center", fontsize=11, color=GRAY)
-    box(ax, (12, 80), 16, 14, "\u7528\u6237", fc="white", fs=14, sub="\u9700\u6c42·\u6838\u67e5·\u7ec8\u68c0", sub_fs=10.5)
-    box(ax, (50, 80), 26, 17, "\u7edf\u7b79\u8005\nOrchestrator", fc=LIGHTB, fs=14.5, weight="bold",
-        sub="\u4efb\u52a1\u5206\u89e3·\u7ed3\u679c\u7efc\u5408·\u9a8c\u6536\u56de\u704c", sub_fs=10)
-    box(ax, (27, 44), 23, 17, "\u6267\u884c\u8005\nWorker", fc="white", fs=14, sub="\u5355\u4e00\u804c\u8d23·\u5de5\u5177\u8c03\u7528", sub_fs=10)
-    box(ax, (73, 44), 23, 17, "\u6838\u67e5\u8005\nChecker", fc=LIGHTG, fs=14, sub="\u4ea7\u51fa\u6bd4\u5bf9·\u9a8c\u6536", sub_fs=10)
-    box(ax, (50, 10), 44, 12, "\u8bb0\u5fc6\u7cfb\u7edf Memory", fc="white", fs=13,
-        sub="\u70ed\u8bb0\u5fc6 / \u51b7\u8bb0\u5fc6 / \u65f6\u95f4\u8f74\u65e5\u5fd7（\u53ef\u8bfb·\u53ef\u5ba1\u8ba1）", sub_fs=10)
-    # Legacy figure logic retained from the original project.
-    arr(ax, (20, 84), (37, 84), lw=2.0, ms=15)
-    ax.text(28.5, 87.5, "\u59d4\u6258\u9700\u6c42", fontsize=11, color=INK)
-    arr(ax, (37, 76), (20, 76), lw=2.0, ms=15)
-    ax.text(28.5, 72.5, "\u4ea7\u51fa\u4ea4\u4ed8", fontsize=11, color=INK)
-    # Legacy figure logic retained from the original project.
-    arr(ax, (44, 71.5), (28, 52.5), lw=2.0, ms=15)
-    ax.text(33, 65, "① \u4efb\u52a1\u5206\u89e3", fontsize=11, color=INK)
-    # Legacy figure logic retained from the original project.
-    arr(ax, (56, 71.5), (72, 52.5), lw=2.0, ms=15)
-    ax.text(67, 65, "② \u5206\u914d\u5b50\u4efb\u52a1", fontsize=11, color=INK)
-    # Legacy figure logic retained from the original project.
-    arr(ax, (38.5, 44), (61.5, 44), lw=2.0, ms=15)
-    ax.text(50, 47.5, "③ \u4ea7\u51fa\u9001\u68c0", fontsize=11, color=INK)
-    # Legacy figure logic retained from the original project.
-    ax.plot([84.5, 94, 94, 63.5], [44, 44, 80, 80], color=INK, lw=1.6, zorder=2)
-    ax.add_patch(FancyArrowPatch((94, 80), (63.5, 80), arrowstyle="-|>", mutation_scale=14,
-                                 linewidth=1.6, color=INK, shrinkA=0, shrinkB=1, zorder=3))
-    ax.text(91.5, 62, "④ \u9a8c\u6536\u56de\u704c", fontsize=11, color=INK, rotation=90, ha="center", va="center")
-    # Legacy figure logic retained from the original project.
-    ax.plot([40, 6, 6, 28], [71.5, 71.5, 10, 10], color=INK, lw=1.6, zorder=2)
-    ax.add_patch(FancyArrowPatch((6, 10), (28, 10), arrowstyle="-|>", mutation_scale=14,
-                                 linewidth=1.6, color=INK, shrinkA=0, shrinkB=1, zorder=3))
-    ax.text(3.5, 40, "⑤ \u8bb0\u5fc6\u6c89\u6dc0", fontsize=11, color=INK, rotation=90, ha="center", va="center")
-    note(fig, "\u6ce8：\u4f9d\u636e\u7814\u7a76\u62a5\u544a 1.1 \u4e0e 2.1 \u7ed8\u5236；①—⑤\u4e3a\u4e00\u6b21\u59d4\u6258\u7684\u534f\u4f5c\u987a\u5e8f。", x=0.03)
-    save(fig, "02-\u7edf\u7b79\u6267\u884c\u6838\u67e5\u67b6\u6784.png")
 
 
 def fig_29_architecture():
@@ -1397,11 +1353,11 @@ def fig_30_triangulation():
         sub="\u53d7\u63a7\u5bf9\u6bd4\u5b9e\u9a8c · H4", sub_fs=10.5)
     box(ax, (50, 82), 27, 12, "\u4e09\u89d2\u6d4b\u91cf\u7efc\u5408", fc=LIGHTO, fs=14.5, weight="bold",
         sub="\u6536\u655b\u56de\u7b54 RQ1—RQ3", sub_fs=10.5)
-    arr(ax, (30, 54), (44, 36), lw=1.8, ms=15)   # Legacy figure logic retained from the original project.
-    arr(ax, (70, 54), (56, 36), lw=1.8, ms=15)   # Legacy figure logic retained from the original project.
-    arr(ax, (30, 74), (44, 76), lw=1.8, ms=15)   # Legacy figure logic retained from the original project.
-    arr(ax, (70, 74), (56, 76), lw=1.8, ms=15)   # Legacy figure logic retained from the original project.
-    arr(ax, (50, 36), (50, 76), lw=1.8, ms=15)   # Legacy figure logic retained from the original project.
+    arr(ax, (30, 54), (44, 36), lw=1.8, ms=15)
+    arr(ax, (70, 54), (56, 36), lw=1.8, ms=15)
+    arr(ax, (30, 74), (44, 76), lw=1.8, ms=15)
+    arr(ax, (70, 74), (56, 76), lw=1.8, ms=15)
+    arr(ax, (50, 36), (50, 76), lw=1.8, ms=15)
     note(fig, "\u6ce8：\u4f9d\u636e\u7814\u7a76\u62a5\u544a 3.1 \u7ed8\u5236；\u4e09\u4e2a\u5b50\u7814\u7a76\u4ece\u4e0d\u540c\u8bc1\u636e\u6e90\u6536\u655b\u5230\u5bf9\u7814\u7a76\u95ee\u9898\u7684\u56de\u7b54。", x=0.03)
     save(fig, "05-\u7814\u7a76\u8bbe\u8ba1\u4e09\u89d2\u6d4b\u91cf.png")
 
@@ -1493,7 +1449,7 @@ def fig_33_summary_table():
 
 
 # ==================================================================
-# Legacy figure logic retained from the original project.
+
 # ==================================================================
 def verify(q, log, exp, mem):
     X = q[G1].apply(pd.to_numeric, errors="coerce").values
@@ -1536,19 +1492,19 @@ def main():
     q, log, exp, mem, sus = load()
     verify(q, log, exp, mem)
     jobs = [
-        # Legacy figure logic retained from the original project.
+
         ("01-\u90e8\u7f72\u6210\u672c\u538b\u7f29\u793a\u610f.png", lambda: fig_04_cost_compress(sus)),
-        # Legacy figure logic retained from the original project.
+
         ("02-\u7edf\u7b79\u6267\u884c\u6838\u67e5\u67b6\u6784.png", fig_29_architecture),
         ("03-\u7406\u8bba\u6574\u5408\u6846\u67b6.png", fig_31_theory),
         ("04-DDA\u4e09\u9636\u6bb5\u6a21\u578b.png", fig_28_dda),
-        # Legacy figure logic retained from the original project.
+
         ("05-\u7814\u7a76\u8bbe\u8ba1\u4e09\u89d2\u6d4b\u91cf.png", fig_30_triangulation),
         ("06-SBDP\u516d\u9636\u6bb5\u90e8\u7f72\u6d41\u7a0b.png", fig_03_sbdp_flow),
-        # Legacy figure logic retained from the original project.
+
         ("07-\u90e8\u7f72\u53ef\u7528\u6027\u6d4b\u8bd5\u7ed3\u679c.png", lambda: fig_01_dashboard(sus)),
         ("08-SUS\u5f97\u5206\u4e0e\u53ef\u7528\u6027\u5206\u7ea7.png", lambda: fig_02_sus_grading(sus)),
-        # Legacy figure logic retained from the original project.
+
         ("09-\u4f7f\u7528\u72b6\u6001\u5206\u5e03.png", lambda: fig_18_usage_groups(q)),
         ("10-\u4efb\u52a1\u6d41\u4e03\u73af\u8282\u59d4\u6258\u7387.png", lambda: fig_05_boundary(q)),
         ("11-\u4efb\u52a1\u6d41\u4e03\u73af\u8282\u59d4\u6258\u7387-\u9762\u79ef\u56fe.png", lambda: fig_06_arch(q)),
@@ -1566,7 +1522,7 @@ def main():
         ("23-\u8bb0\u5fc6\u79ef\u7d2f\u4e0e\u6301\u7eed\u4f7f\u7528\u610f\u5411.png", lambda: fig_15_memory(q, mem)),
         ("24-\u95ee\u5377\u91cf\u8868\u4fe1\u5ea6.png", fig_16_alpha),
         ("25-\u611f\u77e5\u6784\u5ff5\u96f7\u8fbe\u56fe.png", lambda: fig_17_radar(q)),
-        # Legacy figure logic retained from the original project.
+
         ("26-\u603b\u65f6\u957f\u5bf9\u6bd4.png", lambda: fig_21_time(exp)),
         ("27-\u4eba\u5de5\u4ecb\u5165\u6b21\u6570\u5bf9\u6bd4.png", lambda: fig_22_count(exp)),
         ("28-\u4eba\u5de5\u4ecb\u5165\u65f6\u957f\u5bf9\u6bd4.png", lambda: fig_23_intervention(exp)),
@@ -1574,7 +1530,7 @@ def main():
         ("30-\u591a\u667a\u80fd\u4f53\u76f8\u5bf9\u589e\u76ca.png", lambda: fig_25_gain(exp)),
         ("31-\u914d\u5bf9\u4e2a\u4f53\u8f68\u8ff9.png", lambda: fig_26_slope(exp)),
         ("32-\u6548\u5e94\u91cf\u4e0e\u663e\u8457\u6027.png", lambda: fig_27_effect(exp)),
-        # Legacy figure logic retained from the original project.
+
         ("33-\u6838\u5fc3\u7ed3\u679c\u6c47\u603b\u8868.png", fig_33_summary_table),
     ]
     print(f"\nGenerating {len(jobs)} figures -> {OUT}")

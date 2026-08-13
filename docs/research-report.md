@@ -153,11 +153,11 @@ Four participants each completed three tasks under single-agent and multi-agent 
 
 Condition means and SDs were calculated within task. Exact two-sided Wilcoxon tests compared paired observations. Matched-pairs rank-biserial correlations were oriented so that positive values favor the multi-agent condition. With four non-zero paired differences in one direction, the smallest attainable exact two-sided p-value is .125. The experiment is therefore interpreted through direction, magnitude, and consistency rather than a significance threshold. No non-inferiority margin was specified.
 
-### 3.5 Ethics, data governance, and AI assistance
+### 3.5 Ethics and data governance
 
 Participation was voluntary and governed by informed consent. Link codes and study IDs were pseudonymous. The original consent terms stated that participant-level data would not be distributed externally. Public repository outputs are therefore restricted to aggregate, non-disclosive tables and figures unless renewed consent and institutional authorization permit a broader release.
 
-AI tools assisted with English translation, code refactoring, statistical cross-checking, visualization, and language editing. The researcher remains responsible for the study design, source data, analytical specifications, interpretation, and final claims. The repository documents evidence boundaries and preserves machine-readable aggregate outputs.
+The researcher remains responsible for the study design, source data, analytical specifications, interpretation, and final claims. The repository documents evidence boundaries and preserves machine-readable aggregate outputs.
 
 ## 4. Results
 

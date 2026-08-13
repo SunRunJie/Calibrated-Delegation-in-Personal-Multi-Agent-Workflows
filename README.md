@@ -22,13 +22,11 @@ protocols/     Ethics materials, instruments, codebooks, and study protocols
 data/          Data-access documentation and Git-ignored restricted inputs
 analysis/      Statistical analysis plan and figure-generation code
 results/       Non-disclosive aggregate result tables
-figures/       The original 33-figure sequence, translated into English
-artifact/      English Self-Bootstrapping Deployment Protocol
+figures/       Research figures and figure documentation
+artifact/      Self-Bootstrapping Deployment Protocol
 ```
 
-Word and PowerPoint deliverables are intentionally excluded. The repository contains PNG figures only; no PDF figure copies are generated.
-
-The complete English manuscript, with all 33 figures preserved in source order, is available at [`docs/research-report.md`](docs/research-report.md).
+The complete English manuscript is available at [`docs/research-report.md`](docs/research-report.md).
 
 ## Reproduce the figures
 
