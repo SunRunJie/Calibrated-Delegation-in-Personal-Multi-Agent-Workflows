@@ -1,0 +1,2 @@
+analysis,n,before_mean,before_median,after_mean,after_median,median_change_after_minus_before,wilcoxon_w,p_value,rank_biserial_favoring_decline
+Primary: user-aggregated,12,0.12202380952380949,0.11904761904761903,0.05109126984126983,0.041666666666666664,-0.07142857142857142,1.5,0.00146484375,0.9615384615384616

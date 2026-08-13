@@ -1,0 +1,15 @@
+metric,value,unit_or_sample
+Attempts,5.0,count
+Completed deployments,4.0,count
+Completion proportion,0.8,proportion
+Completion proportion CI low,0.37553462976252533,proportion
+Completion proportion CI high,0.9637758913675698,proportion
+Completion time mean,29.5,minutes; completers
+Completion time SD,3.696845502136472,minutes; completers
+Completion time median,29.0,minutes; completers
+Completion time minimum,26.0,minutes; completers
+Completion time maximum,34.0,minutes; completers
+"SUS mean, all attempts",66.2,0-100
+"SUS SD, all attempts",13.863621460498695,0-100
+"SUS mean, completers",72.25,0-100
+"SUS SD, completers",3.5,0-100

@@ -1,0 +1,29 @@
+stage,outcome,proportion
+Problem definition,Successful,0.6111111111111112
+Information retrieval,Successful,0.5957446808510638
+Information organization,Successful,0.6140350877192983
+Analysis and reasoning,Successful,0.56
+Content generation,Successful,0.6338028169014085
+Operational execution,Successful,0.5135135135135135
+Judgment and decision,Successful,0.5172413793103449
+Problem definition,Partially successful,0.19444444444444445
+Information retrieval,Partially successful,0.1702127659574468
+Information organization,Partially successful,0.24561403508771928
+Analysis and reasoning,Partially successful,0.24
+Content generation,Partially successful,0.16901408450704225
+Operational execution,Partially successful,0.24324324324324326
+Judgment and decision,Partially successful,0.1724137931034483
+Problem definition,Withdrawn,0.08333333333333333
+Information retrieval,Withdrawn,0.0425531914893617
+Information organization,Withdrawn,0.03508771929824561
+Analysis and reasoning,Withdrawn,0.08
+Content generation,Withdrawn,0.1267605633802817
+Operational execution,Withdrawn,0.08108108108108109
+Judgment and decision,Withdrawn,0.10344827586206896
+Problem definition,Failed,0.1111111111111111
+Information retrieval,Failed,0.19148936170212766
+Information organization,Failed,0.10526315789473684
+Analysis and reasoning,Failed,0.12
+Content generation,Failed,0.07042253521126761
+Operational execution,Failed,0.16216216216216217
+Judgment and decision,Failed,0.20689655172413793

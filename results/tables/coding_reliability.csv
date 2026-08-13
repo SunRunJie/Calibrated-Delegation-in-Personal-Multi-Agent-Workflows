@@ -1,0 +1,5 @@
+dimension,double_coded_n,cohen_kappa
+Workflow stage,65,0.9084507042253521
+Outcome,65,0.9707075259125734
+Failure reason,22,0.9325153374233129
+Error exposure,65,0.8790697674418606

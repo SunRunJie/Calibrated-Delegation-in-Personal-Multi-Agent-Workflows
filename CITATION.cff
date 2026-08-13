@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this research repository, please cite it using the metadata below."
+title: "Calibrated Delegation in Personal Multi-Agent Workflows: Deployment, Task Boundaries, and Continued Use"
+type: software
+authors:
+  - family-names: Sun
+    given-names: Runjie
+affiliation: "School of Information Management, Nanjing University"
+version: 1.0.0
+date-released: 2026-08-13
+license: MIT
+keywords:
+  - multi-agent systems
+  - human-AI interaction
+  - task-level delegation
+  - trust calibration
+  - information systems
+  - design science research
+

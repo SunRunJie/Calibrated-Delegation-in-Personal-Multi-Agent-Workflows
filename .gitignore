@@ -1,0 +1,12 @@
+.venv/
+.private-archive/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.DS_Store
+Thumbs.db
+
+# Participant-level research data are retained locally and must not be added to GitHub.
+data/restricted/*
+!data/restricted/README.md

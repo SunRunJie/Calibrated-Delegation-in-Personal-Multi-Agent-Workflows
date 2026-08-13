@@ -1,0 +1,2 @@
+analysis,n,before_mean,before_median,after_mean,after_median,median_change_after_minus_before,wilcoxon_w,p_value,rank_biserial_favoring_decline,caution
+Sensitivity: user-stage units,38,0.13533834586466162,0.14285714285714285,0.06015037593984962,0.07142857142857142,-0.07142857142857142,80.5,8.89236107468605e-05,0.7294117647058823,Dependent stages within users; p-value is descriptive

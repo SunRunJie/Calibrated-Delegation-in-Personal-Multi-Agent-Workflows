@@ -1,0 +1,6 @@
+data_class,source_role,sha256,rows,columns
+survey,data/restricted/survey-responses.csv,96d6a6d99967d03a7b7255afc5314b8acf29f23467931156c4973c5bc2cac324,30,45
+deployment,data/restricted/deployment-usability.csv,5a598cc6513961923e2dca950c2960e405774b53deba3916f683443b8e11c707,5,5
+events,data/restricted/usage-event-coding.csv,f589a55321b0048a10711f50f5a3e6956e5b036ab21bc271b99c47d44f8e01ec,327,14
+memory,data/restricted/memory-indicators.csv,594a8cb7a978ddf900f4b93b4b94313e72eb27b4f5caaafe9ff3e051f7189fbe,13,4
+experiment,data/restricted/comparative-experiment.csv,46dc4bd921a5db0561b91b729367d59b89f4ffdfbe1698bb79ba4c8f84f69698,24,15

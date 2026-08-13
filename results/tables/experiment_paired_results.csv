@@ -1,0 +1,13 @@
+task,metric,unit,paired_n,single_mean,single_sd,multi_mean,multi_sd,median_difference_multi_minus_single,wilcoxon_w,p_value_exact_two_sided,rank_biserial_favoring_multi,interpretation
+A,Total time,minutes,4,29.75,2.6299556396765835,16.25,2.8722813232690143,-14.0,0.0,0.125,1.0,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+A,Human interventions,count,4,14.5,1.2909944487358056,7.0,1.4142135623730951,-7.5,0.0,0.125,1.0,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+A,Human intervention time,minutes,4,16.25,2.0615528128088303,8.25,2.217355782608345,-8.5,0.0,0.125,1.0,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+A,Blind-rated output quality,1-5,4,3.375,0.408248290463863,3.21875,0.2576941016011038,-0.1875,3.0,0.625,-0.4,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+B,Total time,minutes,4,26.0,2.943920288775949,20.5,4.795831523312719,-6.0,0.0,0.125,1.0,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+B,Human interventions,count,4,10.25,1.707825127659933,6.25,1.2583057392117916,-5.0,0.0,0.25,1.0,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+B,Human intervention time,minutes,4,13.0,1.632993161855452,7.25,1.707825127659933,-5.0,0.0,0.125,1.0,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+B,Blind-rated output quality,1-5,4,3.5,0.44487826050130463,4.3125,0.1613743060919757,0.8125,0.0,0.125,1.0,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+C,Total time,minutes,4,23.0,2.943920288775949,24.0,1.8257418583505538,0.5,4.0,0.875,-0.2,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+C,Human interventions,count,4,8.75,1.707825127659933,9.5,1.9148542155126762,1.0,3.0,0.625,-0.4,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+C,Human intervention time,minutes,4,11.0,0.816496580927726,10.0,1.4142135623730951,-1.0,2.0,0.375,0.6,Exploratory; n=4 pairs; no superiority or non-inferiority claim
+C,Blind-rated output quality,1-5,4,3.78125,0.7864410870073698,4.0,0.1767766952966369,-0.125,4.0,0.875,-0.2,Exploratory; n=4 pairs; no superiority or non-inferiority claim
