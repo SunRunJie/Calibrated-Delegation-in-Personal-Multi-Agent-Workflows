@@ -59,6 +59,14 @@ The original consent terms do not permit external distribution of participant-le
 
 Code is available under the MIT License. Written research materials are available under CC BY 4.0. Participant-level data are excluded from the license and from the public repository.
 
+## Archival release
+
+The repository is prepared for versioned preservation through Zenodo. Zenodo will issue a permanent DOI after the first GitHub release is archived; that DOI should then replace the repository URL in the preferred citation. See [`docs/zenodo-release.md`](docs/zenodo-release.md) for the repository-specific release procedure. Citation metadata are maintained in [`CITATION.cff`](CITATION.cff).
+
 ## Author
 
-Runjie Sun, School of Information Management, Nanjing University.
+**Runjie Sun**<br />
+School of Information Management, Nanjing University<br />
+[251820093@smail.nju.edu.cn](mailto:251820093@smail.nju.edu.cn)
+
+Research interests represented in this project include human–AI interaction, information systems, personal multi-agent workflows, task-level delegation, trust calibration, and design-science evaluation.

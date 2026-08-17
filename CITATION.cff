@@ -5,10 +5,18 @@ type: software
 authors:
   - family-names: Sun
     given-names: Runjie
-affiliation: "School of Information Management, Nanjing University"
+    affiliation: "School of Information Management, Nanjing University"
+    email: "251820093@smail.nju.edu.cn"
 version: 1.0.0
 date-released: 2026-08-13
 license: MIT
+repository-code: "https://github.com/SunRunJie/Calibrated-Delegation-in-Personal-Multi-Agent-Workflows"
+url: "https://sunrunjie.github.io/Calibrated-Delegation-in-Personal-Multi-Agent-Workflows/"
+abstract: >-
+  An empirical information-systems study of document-guided deployment,
+  stage-level delegation, failure-linked changes in use, and the association
+  between accumulated memory and continuance intention in personal
+  multi-agent workflows.
 keywords:
   - multi-agent systems
   - human-AI interaction
@@ -16,4 +24,3 @@ keywords:
   - trust calibration
   - information systems
   - design science research
-
