@@ -27,12 +27,23 @@ themeButton?.addEventListener('click', () => {
 menuButton?.addEventListener('click', () => {
   const open = mobileMenu.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
 });
 
 mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
   mobileMenu.classList.remove('open');
   menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Open navigation menu');
 }));
+
+addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileMenu?.classList.contains('open')) {
+    mobileMenu.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation menu');
+    menuButton.focus();
+  }
+});
 
 document.querySelectorAll('[data-figure]').forEach((button) => button.addEventListener('click', () => {
   dialogImage.src = button.dataset.figure;
@@ -46,17 +57,17 @@ figureDialog?.addEventListener('click', (event) => {
   if (event.target === figureDialog) figureDialog.close();
 });
 
-document.querySelector('[data-copy-citation]')?.addEventListener('click', async (event) => {
-  const button = event.currentTarget;
+document.querySelectorAll('[data-copy-text]').forEach((button) => button.addEventListener('click', async (event) => {
+  const target = event.currentTarget;
   try {
-    await navigator.clipboard.writeText(button.dataset.copyText);
-    const previous = button.innerHTML;
-    button.textContent = 'Citation copied ✓';
-    setTimeout(() => { button.innerHTML = previous; }, 1800);
+    await navigator.clipboard.writeText(target.dataset.copyText);
+    const previous = target.innerHTML;
+    target.textContent = target.hasAttribute('data-copy-citation') ? 'Citation copied ✓' : 'Command copied ✓';
+    setTimeout(() => { target.innerHTML = previous; }, 1800);
   } catch {
-    button.textContent = 'Select citation above';
+    target.textContent = 'Copy unavailable';
   }
-});
+}));
 
 const observer = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
