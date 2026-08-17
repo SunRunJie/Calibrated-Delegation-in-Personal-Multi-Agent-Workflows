@@ -1,34 +1,24 @@
-# Zenodo archival release
+# Zenodo archival record
 
 This repository uses `CITATION.cff` as the authoritative metadata source for GitHub and Zenodo. Do not add a `.zenodo.json` file unless Zenodo-specific fields are needed: when both files are present, Zenodo ignores `CITATION.cff` during GitHub release archiving.
 
-## One-time connection
+## Published identifiers
 
-1. Sign in to [Zenodo](https://zenodo.org/) with the GitHub account that owns this repository.
-2. Open the profile menu, choose **GitHub**, and authorize the connection if prompted.
-3. Select **Sync now**.
-4. Find `SunRunJie/Calibrated-Delegation-in-Personal-Multi-Agent-Workflows` and enable it.
+- Version 1.0.0 DOI: [`10.5281/zenodo.21976763`](https://doi.org/10.5281/zenodo.21976763)
+- Project concept DOI: [`10.5281/zenodo.21976762`](https://doi.org/10.5281/zenodo.21976762)
+- Publication date: 17 August 2026
+- Record type: Software
+- Access: Open
 
-## Archive version 1.0.0
+The version DOI identifies the exact `v1.0.0` archive. The concept DOI resolves to the project's latest archived version and should be used for a version-independent project link.
 
-1. Confirm that `CITATION.cff`, the README, licenses, public analysis code, aggregate results, figures, and documentation are committed on `main`.
-2. On GitHub, open **Releases** and choose **Draft a new release**.
-3. Create the tag `v1.0.0` from `main` and use `Calibrated Delegation v1.0.0` as the release title.
-4. Summarize the research materials included in the release and state that participant-level data are excluded under the original consent terms.
-5. Publish the GitHub release. Zenodo will ingest the release automatically after the repository has been enabled.
-6. Open the resulting Zenodo record and check the title, author, affiliation, description, version, license, and files before using the DOI publicly.
+## Preferred citation
 
-## Return the DOI to the repository
+Sun, R. (2026). *Calibrated Delegation in Personal Multi-Agent Workflows: Deployment, Task Boundaries, and Continued Use* (Version 1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.21976763
 
-After Zenodo publishes the record:
+## Future versions
 
-- add the version DOI to `CITATION.cff` using the `doi` field;
-- replace the repository URL in the preferred citation on the project page with `https://doi.org/...`;
-- replace the project page's **DOI pending** status with the DOI link;
-- add the Zenodo DOI badge to the README;
-- commit and publish these metadata updates without changing the archived `v1.0.0` tag.
-
-Use the version DOI when citing version 1.0.0. Zenodo also provides a concept DOI that resolves to the latest archived version; use it for a version-independent project link.
+For each substantive public release, update the version and release date in `CITATION.cff`, create a new semantic-version GitHub tag, and publish a GitHub release. Zenodo will assign a new version DOI while retaining the same concept DOI. Do not alter an existing release tag after it has been archived.
 
 ## Official guidance
 

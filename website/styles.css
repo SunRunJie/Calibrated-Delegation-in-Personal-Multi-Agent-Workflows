@@ -335,10 +335,13 @@ button { font: inherit; }
 .archive-record dt { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
 .archive-record dd { margin: 0; font: 700 10px var(--mono); }
 .archive-record dd i { display: inline-block; width: 7px; height: 7px; margin-right: 6px; background: var(--red); border-radius: 50%; }
+.archive-record dd.registered i { background: var(--green); }
+.archive-record dd a { overflow-wrap: anywhere; text-underline-offset: 3px; }
 .citation-panel { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; margin-top: 30px; padding: 38px 42px; color: #f3f0e8; background: #101a2a; }
 .citation-panel .micro-label { color: var(--sky); }
 .citation-panel h3 { margin: 12px 0 5px; font: 400 28px var(--display); }
 .citation-panel p { max-width: 750px; margin: 0; color: #aeb8c6; font-size: 13px; }
+.citation-panel p a { color: #d8e7f1; overflow-wrap: anywhere; text-underline-offset: 3px; }
 .copy-button { padding: 14px 18px; color: #f3f0e8; background: transparent; border: 1px solid rgba(255,255,255,.25); font: 700 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
 .copy-button:hover { color: #101a2a; background: var(--sky); }
 .closing { padding: 130px 0; color: #f3f0e8; background: #2476a8; }

@@ -6,6 +6,8 @@ This repository contains an empirical information-systems study of how non-techn
 
 **Research site:** [Explore the interactive project page](https://sunrunjie.github.io/Calibrated-Delegation-in-Personal-Multi-Agent-Workflows/) · **Paper:** [`docs/research-report.md`](docs/research-report.md) · **Artifact:** [`artifact/sbdp-installation-guide.md`](artifact/sbdp-installation-guide.md)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21976763.svg)](https://doi.org/10.5281/zenodo.21976763)
+
 ## Research design
 
 | Study component | Analytical sample | Purpose |
@@ -61,7 +63,7 @@ Code is available under the MIT License. Written research materials are availabl
 
 ## Archival release
 
-The repository is prepared for versioned preservation through Zenodo. Zenodo will issue a permanent DOI after the first GitHub release is archived; that DOI should then replace the repository URL in the preferred citation. See [`docs/zenodo-release.md`](docs/zenodo-release.md) for the repository-specific release procedure. Citation metadata are maintained in [`CITATION.cff`](CITATION.cff).
+Version 1.0.0 is preserved on Zenodo under the version DOI [`10.5281/zenodo.21976763`](https://doi.org/10.5281/zenodo.21976763). The concept DOI [`10.5281/zenodo.21976762`](https://doi.org/10.5281/zenodo.21976762) resolves to the continuing project record. See [`docs/zenodo-release.md`](docs/zenodo-release.md) for versioning notes. Citation metadata are maintained in [`CITATION.cff`](CITATION.cff).
 
 ## Author
 
