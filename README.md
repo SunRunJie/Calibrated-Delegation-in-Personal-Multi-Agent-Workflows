@@ -4,6 +4,8 @@
 
 This repository contains an empirical information-systems study of how non-technical users deploy personal multi-agent systems, decide which workflow stages to delegate, revise those decisions after unsuccessful outcomes, and develop continuance intentions as personal memory accumulates. All public-facing materials are in English.
 
+**Research site:** [Explore the interactive project page](https://sunrunjie.github.io/Calibrated-Delegation-in-Personal-Multi-Agent-Workflows/) · **Paper:** [`docs/research-report.md`](docs/research-report.md) · **Artifact:** [`artifact/sbdp-installation-guide.md`](artifact/sbdp-installation-guide.md)
+
 ## Research design
 
 | Study component | Analytical sample | Purpose |

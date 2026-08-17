@@ -9,3 +9,4 @@ Thumbs.db
 # Participant-level research data are retained locally and must not be added to GitHub.
 data/restricted/*
 !data/restricted/README.md
+_site/
